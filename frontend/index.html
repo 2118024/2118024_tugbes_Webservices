@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MontirGo - Login & Registrasi</title>
+    <link rel="stylesheet"href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>MontirGo</h1>
+        <p class="muted">Login atau daftar untuk mulai.</p>
+      </header>
+
+      <section class="card">
+        <div class="tabs">
+          <button class="tab active" data-tab="login">Login</button>
+          <button class="tab" data-tab="register">Registrasi</button>
+        </div>
+
+        <div class="tab-content" id="tab-login">
+          <form id="login-form" class="form" autocomplete="on">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="email@contoh.com" required />
+            </label>
+
+            <label>
+              Password
+              <input type="password" name="password" placeholder="••••••••" required />
+            </label>
+
+            <button class="btn" type="submit">Masuk</button>
+            <p class="status" id="login-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="tab-content hidden" id="tab-register">
+          <form id="register-form" class="form" autocomplete="on">
+            <label>
+              Nama
+              <input type="text" name="nama" placeholder="Nama lengkap" required />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="email@contoh.com" required />
+            </label>
+
+            <label>
+              No HP
+              <input type="tel" name="no_hp" placeholder="08xxxxxxxxxx" required />
+            </label>
+
+            <label>
+              Password
+              <input type="password" name="password" placeholder="Buat password" required minlength="6" />
+            </label>
+
+            <button class="btn" type="submit">Daftar</button>
+            <p class="status" id="register-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="card" id="profile" style="display:none;">
+        <h2>Berhasil login</h2>
+        <div class="profile-grid">
+          <div>
+            <strong>Nama</strong>
+            <div id="profile-nama" class="value">-</div>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <div id="profile-email" class="value">-</div>
+          </div>
+          <div>
+            <strong>User ID</strong>
+            <div id="profile-id" class="value">-</div>
+          </div>
+        </div>
+        <button class="btn btn-secondary" id="logout-btn" type="button">Logout</button>
+      </section>
+
+      <footer class="muted small">
+        Token disimpan di <code>localStorage</code> untuk demonstrasi.
+      </footer>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
